@@ -1,0 +1,353 @@
+/* style.css (Estilo Tradicional)
+  Este arquivo contém todos os estilos para a página.
+*/
+
+/* --- Variáveis de Cor e Configurações Globais --- */
+:root {
+    --bg-dark: #0f172a; /* bg-slate-900 */
+    --bg-medium: #1e293b; /* bg-slate-800 */
+    --bg-light: #334155; /* bg-slate-700 */
+    --text-primary: #cbd5e1; /* text-slate-300 */
+    --text-secondary: #94a3b8; /* text-slate-400 */
+    --accent-color: #22d3ee; /* cyan-400 */
+    --accent-color-darker: #06b6d4; /* cyan-500 */
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* --- Reset Básico e Estilos do Body --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #5F5F5D;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.25rem; }
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Layout do Container --- */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* --- Cabeçalho e Navegação --- */
+.site-header {
+    /* CORREÇÃO: A cor de fundo precisa ser semi-transparente para o blur funcionar */
+    background-color: rgba(113, 113, 116, 0.5); /* #717174 com 50% de transparência */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Adicionado para remover o espaçamento lateral apenas no cabeçalho */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.logo {
+    height: 80px; /* Define a altura do logo */
+    width: auto; /* A largura se ajusta automaticamente */
+}
+
+.main-nav {
+    display: none; /* Escondido por padrão em telas pequenas */
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-primary);
+}
+
+.main-nav a:hover {
+    color: #ffffff;
+}
+
+.nav-button {
+    background-color: #334155;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #5F5F5D;
+    color: #ffffff;
+}
+
+.menu-toggle {
+    display: block; /* Visível por padrão em telas pequenas */
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.icon-menu {
+    width: 24px;
+    height: 24px;
+}
+
+/* --- Seções --- */
+section {
+    padding: 5rem 0;
+}
+
+/* Seção Hero */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    margin-bottom: 1rem;
+}
+
+.hero-content .highlight {
+    color: var(--accent-color);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--accent-color-darker);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
+/* Seção Sobre */
+.about-content {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image img {
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.about-text h2 {
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+/* Seção de Cabeçalho (para Serviços e Portfólio) */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+}
+
+/* Seção de Serviços */
+.services-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--bg-medium);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.service-icon {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.service-icon svg {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto;
+    fill: none;
+}
+
+.service-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+}
+
+/* Seção de Portfólio */
+.portfolio-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.portfolio-card {
+    background-color: var(--bg-medium);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.portfolio-card img {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-info {
+    padding: 1.5rem;
+}
+
+.portfolio-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.portfolio-info a {
+    font-weight: 600;
+}
+
+/* --- Rodapé --- */
+.site-footer-contact {
+    background-color: rgba(30, 41, 59, 0.5);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-content h2 {
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    color: var(--text-secondary);
+}
+
+.social-links {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+}
+
+.copyright {
+    color: #64748b; /* text-slate-500 */
+    font-size: 0.875rem;
+    margin-top: 3rem;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (min-width: 768px) {
+    h1 { font-size: 4rem; }
+
+    .main-nav {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
