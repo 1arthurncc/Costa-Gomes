@@ -58,6 +58,31 @@ img {
     display: block;
 }
 
+/* Estilo para o menu ativo em telas pequenas */
+@media (max-width: 767px) {
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100px; /* Ajuste conforme a altura do seu header */
+        left: 0;
+        background-color: rgba(113, 113, 116, 0.9); /* Fundo com transparência */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .main-nav.is-active {
+        display: flex; /* Exibe o menu quando ativo */
+    }
+
+    .main-nav li {
+        text-align: center;
+        padding: 1rem 0;
+        width: 100%;
+    }
+}
+
 /* --- Layout do Container --- */
 .container {
     width: 90%;
