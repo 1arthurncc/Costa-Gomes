@@ -23,7 +23,8 @@
     <header class="site-header">
         <nav class="container nav-container">
             <a href="#">
-                <img src="Fotos/logo.png" alt="Logo do escritório Costa & Gomes Advogados" class="logo">
+                <!-- CORREÇÃO: Removido o estilo inline para que o CSS externo funcione -->
+                <img src="Fotos/logo6.png" alt="Logo do escritório Costa & Gomes Advogados" class="logo">
             </a>
             <ul class="main-nav">
                 <li><a href="#sobre">Nossa Equipe</a></li>
@@ -64,7 +65,7 @@
                 </div>
                 <div class="about-text">
                     <button class="accordion">
-                        <h2>Elison Fabiano Costa Gomes</h2>
+                        <h2>Doutor Elison Fabiano Costa Gomes</h2>
                     </button>
                     <div class="panel">
                         <p>
@@ -93,7 +94,7 @@
                 </div>
                 <div class="about-text">
                     <button class="accordion">
-                        <h2>Elen Fabrini Costa Gomes</h2>
+                        <h2>Doutora Elen Fabrini Costa Gomes</h2>
                     </button>
                     <div class="panel">
                         <p>Elen é sócia-fundadora do escritório Costa & Gomes Advogados Associados. Natural de Sombrio (SC), iniciou sua
@@ -120,7 +121,7 @@
                 </div>
                 <div class="about-text">
                     <button class="accordion">
-                        <h2>Maicon Euzébio Machado</h2>
+                        <h2>Doutor Maicon Euzébio Machado</h2>
                     </button>
                     <div class="panel">
                         <p>Maicon é natural de Guarita (bairro Coruja), em Sombrio/SC, onde fez o ensino fundamental na E. B. Normélio Cunha e o
@@ -148,67 +149,83 @@
             <div class="services-grid">
                 <!-- Card 1 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3m5-14H8a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V9l-4-4z"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/senhor.jpg" alt="Imagem representando Direito Previdenciário">
                     </div>
-                    <h3>Direito Previdenciário</h3>
-                    <p>Aposentadorias, pensões, auxílios e revisão de benefícios. Garantimos a defesa dos seus direitos junto ao INSS.</p>
+                    <div class="service-card-content">
+                        <h3>Direito Previdenciário</h3>
+                        <p>Aposentadorias, pensões, auxílios e revisão de benefícios. Garantimos a defesa dos seus direitos junto ao INSS.</p>
+                    </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/familia.jpg" alt="Imagem representando Direito de Família">
                     </div>
-                    <h3>Direito de Família</h3>
-                    <p>Atuação em divórcios, partilha de bens, pensão alimentícia, guarda de filhos e inventários, com sensibilidade e discrição.</p>
+                    <div class="service-card-content">
+                        <h3>Direito de Família</h3>
+                        <p>Atuação em divórcios, partilha de bens, pensão alimentícia, guarda de filhos e inventários, com sensibilidade e discrição.</p>
+                    </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/empresarial.jpg" alt="Imagem representando Direito Empresarial">
                     </div>
-                    <h3>Direito Empresarial</h3>
-                    <p>Assessoria para empresas, contratos, questões societárias e recuperação judicial, protegendo seu negócio.</p>
+                    <div class="service-card-content">
+                        <h3>Direito Empresarial</h3>
+                        <p>Assessoria para empresas, contratos, questões societárias e recuperação judicial, protegendo seu negócio.</p>
+                    </div>
                 </div>
                 <!-- Card 4 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/trabalho.jpg" alt="Imagem representando Direito Trabalhista">
                     </div>
-                    <h3>Direito Trabalhista</h3>
-                    <p>Defesa dos direitos de empregados e empregadores, incluindo questões de contrato, demissão e acidentes de trabalho.</p>
+                    <div class="service-card-content">
+                        <h3>Direito Trabalhista</h3>
+                        <p>Defesa dos direitos de empregados e empregadores, incluindo questões de contrato, demissão e acidentes de trabalho.</p>
+                    </div>
                 </div>
                 <!-- Card 5 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/civel.jpg" alt="Imagem representando Direito Cível">
                     </div>
-                    <h3>Direito Cível</h3>
-                    <p>Resolução de conflitos nas relações privadas, como contratos, obrigações, responsabilidade civil e questões imobiliárias.</p>
+                    <div class="service-card-content">
+                        <h3>Direito Cível</h3>
+                        <p>Resolução de conflitos nas relações privadas, como contratos, obrigações, responsabilidade civil e questões imobiliárias.</p>
+                    </div>
                 </div>
                 <!-- Card 6 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 012-2h2a2 2 0 012 2v1m-4 0h4m-4 4h4m-4 4h4m-4 4h4"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/administrativo.jpg" alt="Imagem representando Direito Administrativo">
                     </div>
-                    <h3>Direito Administrativo</h3>
-                    <p>Atuação em licitações, concursos e processos administrativos, defendendo os interesses de cidadãos e empresas.</p>
+                    <div class="service-card-content">
+                        <h3>Direito Administrativo</h3>
+                        <p>Atuação em licitações, concursos e processos administrativos, defendendo os interesses de cidadãos e empresas.</p>
+                    </div>
                 </div>
                 <!-- Card 7 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/tributario.jpg" alt="Imagem representando Direito Tributário">
                     </div>
-                    <h3>Direito Tributário</h3>
-                    <p>Consultoria e defesa em questões de tributos, planejamento fiscal e recuperação de créditos para otimizar a carga tributária.</p>
+                    <div class="service-card-content">
+                        <h3>Direito Tributário</h3>
+                        <p>Consultoria e defesa em questões de tributos, planejamento fiscal e recuperação de créditos para otimizar a carga tributária.</p>
+                    </div>
                 </div>
                 <!-- Card 8 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <div class="service-card-image">
+                        <img src="Fotos/consumidor.jpg" alt="Imagem representando Direito do Consumidor">
                     </div>
-                    <h3>Direito do Consumidor</h3>
-                    <p>Proteção contra práticas abusivas, produtos defeituosos e serviços inadequados, buscando a reparação dos seus direitos.</p>
+                    <div class="service-card-content">
+                        <h3>Direito do Consumidor</h3>
+                        <p>Proteção contra práticas abusivas, produtos defeituosos e serviços inadequados, buscando a reparação dos seus direitos.</p>
+                    </div>
                 </div>
             </div>
         </section>
