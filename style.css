@@ -18,13 +18,20 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* CORREÇÃO CENTRALIZADA: Impede o transbordo na raiz do documento */
+    width: 100%;
 }
 
 body {
     font-family: var(--font-family);
-    background-color: #5F5F5D; /* Cor de fundo original */
-    color: #1a1a1a; /* Cor de texto principal escura para legibilidade */
+    background: linear-gradient(rgba(45, 45, 45, 0.9), rgba(45, 45, 45, 0.9)), url('Fotos/costagomes.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f0f0f0;
     line-height: 1.6;
+    width: 100%; /* Garante que o body ocupe a largura total do html */
 }
 
 h1, h2, h3 {
@@ -43,8 +50,9 @@ a {
     transition: color 0.3s ease;
 }
 
+/* Regra geral de hover para links, que não afetará mais o botão 'Contato' */
 a:hover {
-    color: #ffffff;
+    color: var(--highlight-color);
 }
 
 img {
@@ -63,7 +71,7 @@ img {
 
 /* --- Cabeçalho e Navegação --- */
 .site-header {
-    background-color: rgba(190, 182, 182, 0.5); /* Fundo claro com transparência */
+    background-color: rgba(255, 255, 255, 0.177); /* Fundo claro com transparência */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: sticky;
@@ -83,9 +91,10 @@ img {
 }
 
 .logo {
-    max-height: 150px; 
-    width: auto;      
+    max-height: 180px; 
+    width: auto;
     height: auto;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
     margin-top: 10px;
 }
 
@@ -97,34 +106,40 @@ img {
 }
 
 .main-nav a {
-    color: #000000; /* Cor original do menu */
+    color: #ffffff; /* Cor do texto dos links do menu */
     font-weight: 600;
 }
 
+/* Esta regra de hover se aplica aos links normais, mas não ao botão */
 .main-nav a:hover {
     color: var(--highlight-color);
 }
 
-.nav-button {
+/* Estilo base para o botão 'Contato', agora com seletor mais específico */
+a.nav-button {
     background-color: var(--highlight-color);
     color: #ffffff;
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    display: inline-block; /* CORREÇÃO: Garante que o transform seja aplicado corretamente */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-button:hover {
+/* Seletor mais específico para o hover do botão */
+a.nav-button:hover {
     background-color: var(--highlight-color-hover);
-    color: #ffffff;
+    color: #ffffff; /* Garante que a cor do texto permaneça branca e sobreponha a outra regra */
+    transform: scale(1.05); /* Adicionado o efeito de escala */
 }
 
 .menu-toggle {
     display: block;
     background: none;
     border: none;
-    color: #000000; /* Ícone do menu em preto */
+    color: #ffffff; /* Ícone do menu em branco para melhor contraste */
     cursor: pointer;
+    z-index: 110; /* Garante que o botão fique acima do menu */
 }
 
 .icon-menu {
@@ -160,7 +175,7 @@ section {
 
 .hero-content p {
     font-size: 1.25rem;
-    color: #ffffff; /* Texto secundário escuro */
+    color: #ffffff; 
     margin-bottom: 2rem;
 }
 
@@ -221,7 +236,10 @@ section {
 }
 
 .service-card {
-    background-color: #717174;
+    background-color: rgba(80, 80, 80, 0.7); /* Fundo do card com leve transparência */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -283,7 +301,7 @@ section {
 
 /* --- Rodapé --- */
 .site-footer-contact {
-    background-color: #4a4a4a; /* Rodapé com cinza mais escuro */
+    background-color: #252525; /* Rodapé com cinza mais escuro e sólido */
     color: #f0f0f0;
     padding: 4rem 0 2rem 0;
     text-align: center;
@@ -322,26 +340,53 @@ section {
 
 /* --- Media Queries para Responsividade --- */
 @media (max-width: 767px) {
+    /* ESTILOS DO MENU MOBILE */
     .main-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
+        /* Posicionamento e layout */
         position: absolute;
-        top: 100%;
+        top: 90px; /* Alinhado com a parte inferior do cabeçalho */
         left: 0;
-        background-color: rgba(240, 240, 240, 0.95); /* Fundo claro para menu mobile */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        /* Efeito de vidro (transparência) */
+        background-color: rgba(37, 37, 37, 0.8); /* Cor de fundo escurecida para melhor contraste do texto */
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        
+        /* Animação de abrir/fechar */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
     }
 
     .main-nav.is-active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
     }
 
     .main-nav li {
         text-align: center;
-        padding: 1rem 0;
         width: 100%;
+        padding: 1.25rem 0; /* Espaçamento vertical igual */
+    }
+
+    /* FIM DOS ESTILOS DO MENU MOBILE */
+
+    h1 { font-size: 2.5rem; } /* Ajuste de fonte para telas menores */
+
+    .about-content {
+        grid-template-columns: 1fr; /* Garante que a imagem e o texto fiquem em colunas únicas */
+        text-align: center;
+    }
+
+    .about-image {
+        margin: 0 auto;
     }
 }
 
@@ -380,7 +425,8 @@ section {
     transition: color 0.3s ease;
 }
 
-.accordion:hover h2 {
+.accordion:hover h2,
+.accordion.active h2 {
     color: var(--highlight-color);
 }
 
@@ -409,4 +455,9 @@ section {
 
 .panel p {
     padding: 0.5rem 0 1.5rem 0;
+}
+
+/* Correção para o cabeçalho fixo sobrepor o conteúdo */
+section[id] {
+    scroll-margin-top: 90px; /* Aumentado para corresponder à altura do cabeçalho */
 }
