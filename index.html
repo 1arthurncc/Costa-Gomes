@@ -11,32 +11,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Link para o arquivo de estilo externo -->
-    <link rel="stylesheet" href="style.css">
-
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="Fotos/logo2.png">
 
+    <!-- Link para o arquivo de estilo externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Cabeçalho e Navegação -->
     <header class="site-header">
-        <nav class="container nav-container">
+        <div class="container nav-container">
+            <!-- Logo -->
             <a href="#">
-                <!-- CORREÇÃO: Removido o estilo inline para que o CSS externo funcione -->
                 <img src="Fotos/logo6.png" alt="Logo do escritório Costa & Gomes Advogados" class="logo">
             </a>
-            <ul class="main-nav">
-                <li><a href="#sobre">Nossa Equipe</a></li>
-                <li><a href="#atuacao">Áreas de Atuação</a></li>
-                <li><a href="#localizacao">Localização</a></li>
-                <li><a href="#contato" class="nav-button">Contato</a></li>
-            </ul>
-            <button class="menu-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+
+            <!-- Menu para Telas Grandes (Desktop) -->
+            <nav class="desktop-nav">
+                <a href="#sobre">Nossa Equipe</a>
+                <a href="#atuacao">Áreas de Atuação</a>
+                <a href="#localizacao">Localização</a>
+                <a href="#contato" class="nav-button">Contato</a>
+            </nav>
+
+            <!-- Botão do Menu para Telas Pequenas (Mobile) -->
+            <div class="mobile-menu-wrapper">
+                <button id="mobile-menu-button" type="button" aria-label="Abrir menu principal" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <!-- Ícone de "hambúrguer" -->
+                    <svg id="hamburger-icon" class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <!-- Ícone de "X" para fechar -->
+                    <svg id="close-icon" class="icon hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Dropdown para Telas Pequenas -->
+        <!-- A classe 'hidden' é removida pelo JavaScript para permitir a animação -->
+        <nav id="mobile-menu" class="hidden">
+            <a href="#sobre">Nossa Equipe</a>
+            <a href="#atuacao">Áreas de Atuação</a>
+            <a href="#localizacao">Localização</a>
+            <a href="#contato" class="nav-button">Contato</a>
         </nav>
     </header>
 
@@ -61,7 +82,7 @@
             <!-- Biografia Elison -->
             <div class="about-content">
                 <div class="about-image">
-                    <img src="Fotos/advs/Elison.jpeg" alt="Retrato profissional de Elison Fabiano Costa Gomes">
+                    <img src="Fotos/advs/Elison.jpeg" alt="Retrato profissional de Elison Fabiano Costa Gomes" onerror="this.onerror=null;this.src='https://placehold.co/300x400/a7a7a7/ffffff?text=Foto+Indispon%C3%ADvel';">
                 </div>
                 <div class="about-text">
                     <button class="accordion">
@@ -90,7 +111,7 @@
             <!-- Biografia Elen -->
             <div class="about-content">
                 <div class="about-image">
-                    <img src="Fotos/advs/Elen.jpeg" alt="Retrato profissional de Elen Fabrini Costa Gomes">
+                    <img src="Fotos/advs/Elen.jpeg" alt="Retrato profissional de Elen Fabrini Costa Gomes" onerror="this.onerror=null;this.src='https://placehold.co/300x400/a7a7a7/ffffff?text=Foto+Indispon%C3%ADvel';">
                 </div>
                 <div class="about-text">
                     <button class="accordion">
@@ -117,7 +138,7 @@
             <!-- Biografia Maicon -->
             <div class="about-content">
                 <div class="about-image">
-                    <img src="Fotos/advs/Maicon.jpeg" alt="Retrato profissional de Maicon Euzébio Machado">
+                    <img src="Fotos/advs/Maicon.jpeg" alt="Retrato profissional de Maicon Euzébio Machado" onerror="this.onerror=null;this.src='https://placehold.co/300x400/a7a7a7/ffffff?text=Foto+Indispon%C3%ADvel';">
                 </div>
                 <div class="about-text">
                     <button class="accordion">
@@ -150,7 +171,7 @@
                 <!-- Card 1 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/senhor.jpg" alt="Imagem representando Direito Previdenciário">
+                        <img src="Fotos/senhor.jpg" alt="Imagem representando Direito Previdenciário" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito Previdenciário</h3>
@@ -160,7 +181,7 @@
                 <!-- Card 2 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/familia.jpg" alt="Imagem representando Direito de Família">
+                        <img src="Fotos/familia.jpg" alt="Imagem representando Direito de Família" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito de Família</h3>
@@ -170,7 +191,7 @@
                 <!-- Card 3 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/empresarial.jpg" alt="Imagem representando Direito Empresarial">
+                        <img src="Fotos/empresarial.jpg" alt="Imagem representando Direito Empresarial" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito Empresarial</h3>
@@ -180,7 +201,7 @@
                 <!-- Card 4 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/trabalho.jpg" alt="Imagem representando Direito Trabalhista">
+                        <img src="Fotos/trabalho.jpg" alt="Imagem representando Direito Trabalhista" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito Trabalhista</h3>
@@ -190,7 +211,7 @@
                 <!-- Card 5 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/civel.jpg" alt="Imagem representando Direito Cível">
+                        <img src="Fotos/civel.jpg" alt="Imagem representando Direito Cível" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito Cível</h3>
@@ -200,7 +221,7 @@
                 <!-- Card 6 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/administrativo.jpg" alt="Imagem representando Direito Administrativo">
+                        <img src="Fotos/administrativo.jpg" alt="Imagem representando Direito Administrativo" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito Administrativo</h3>
@@ -210,7 +231,7 @@
                 <!-- Card 7 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/tributario.jpg" alt="Imagem representando Direito Tributário">
+                        <img src="Fotos/tributario.jpg" alt="Imagem representando Direito Tributário" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito Tributário</h3>
@@ -220,7 +241,7 @@
                 <!-- Card 8 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/consumidor.jpg" alt="Imagem representando Direito do Consumidor">
+                        <img src="Fotos/consumidor.jpg" alt="Imagem representando Direito do Consumidor" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito do Consumidor</h3>
@@ -230,7 +251,7 @@
                 <!-- Card 9 -->
                 <div class="service-card">
                     <div class="service-card-image">
-                        <img src="Fotos/imobiliario.jpg" alt="Imagem representando Direito do Consumidor">
+                        <img src="Fotos/imobiliario.jpg" alt="Imagem representando Direito Imobiliário" onerror="this.onerror=null;this.src='https://placehold.co/350x200/a7a7a7/ffffff?text=Imagem+Indispon%C3%ADvel';">
                     </div>
                     <div class="service-card-content">
                         <h3>Direito Imobiliário e Sucessório</h3>
@@ -279,22 +300,57 @@
 
     <!-- Scripts Consolidados -->
     <script>
-        window.history.scrollRestoration = 'manual';
+        // Restaura a posição do scroll manualmente para evitar problemas de carregamento
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
         // Script do WhatsApp
         const numero = "5548996929000";
         const msg = "Olá! Gostaria de saber mais sobre os serviços de Costa & Gomes Advogados Associados";
         const link = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
         document.getElementById("whatsapp").href = link;
 
-        // Script do Menu Mobile
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mainNav = document.querySelector('.main-nav');
-        const body = document.body;
+        // --- SCRIPT DO MENU MOBILE COM ANIMAÇÃO ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        
+        // Remove a classe 'hidden' inicial para que a transição CSS funcione
+        mobileMenu.classList.remove('hidden');
 
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('is-active');
-            body.style.overflow = mainNav.classList.contains('is-active') ? 'hidden' : '';
+        // Função para abrir/fechar o menu
+        mobileMenuButton.addEventListener('click', () => {
+            const isMenuOpen = mobileMenu.classList.contains('menu-visible');
+            
+            // Alterna a classe que controla a visibilidade e a animação
+            mobileMenu.classList.toggle('menu-visible');
+            
+            // Alterna os ícones
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            
+            // Atualiza o atributo ARIA para acessibilidade
+            mobileMenuButton.setAttribute('aria-expanded', !isMenuOpen);
         });
+        
+        // Função para fechar o menu ao clicar em um link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Esconde o menu removendo a classe
+                mobileMenu.classList.remove('menu-visible');
+                
+                // Garante que o ícone de hambúrguer seja exibido e o 'X' oculto
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                
+                // Atualiza o atributo ARIA
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+
 
         // Script do Accordion
         const accordions = document.querySelectorAll('.accordion');
