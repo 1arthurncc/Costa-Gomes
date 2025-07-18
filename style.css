@@ -17,18 +17,21 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     width: 100%;
-}
-
-body {
-    font-family: var(--font-family);
+    height: 100%;
+    /* A imagem de fundo é aplicada aqui para garantir a cobertura total */
     background: linear-gradient(rgba(45, 45, 45, 0.9), rgba(45, 45, 45, 0.9)), url('Fotos/costagomes.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+body {
+    font-family: var(--font-family);
     color: #f0f0f0;
     line-height: 1.6;
     width: 100%;
+    min-height: 100%; /* Garante que o body ocupe no mínimo 100% da altura do HTML */
 }
 
 h1, h2, h3 {
@@ -161,7 +164,7 @@ img {
    display: flex;
    flex-direction: column;
    gap: 0.75rem;
-   border-top: 1px solid rgba(255, 255, 255, 0.1);
+   /* A borda superior foi removida para eliminar a linha */
    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
    
    /* Propriedades para a animação */
@@ -426,6 +429,11 @@ section {
     .mobile-menu-wrapper {
       display: block;
     }
+
+    /* Ajuste da margem de rolagem para mobile */
+    section[id] {
+        scroll-margin-top: 300px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -444,6 +452,11 @@ section {
 
     .about-content {
         grid-template-columns: 300px 1fr;
+    }
+
+    /* Ajuste da margem de rolagem para desktop */
+    section[id] {
+        scroll-margin-top: 100px;
     }
 }
 
@@ -496,9 +509,4 @@ section {
 
 .panel p {
     padding: 0.5rem 0 1.5rem 0;
-}
-
-/* --- Ajuste para o cabeçalho fixo --- */
-section[id] {
-    scroll-margin-top: 40px;
 }
